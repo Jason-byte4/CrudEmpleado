@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Sistema de Gestión de Empleados</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4
+.1.3/css/bootstrap.min.css"
+	integrity="sha384-
+MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ER
+dknLPMO"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Sistema de Gestion de Empleados</h1>
+		<hr>
+		<h2>Guardar Empleado</h2>
+		<form action="#" th:action="@{/guardarEmpleado}"
+			th:object="${empleadoNuevo}" method="POST">
+			<input type="text" th:field="*{nombre}"
+				placeholder="Nombre del empleado" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{apellido}"
+				placeholder="Apellido del empleado" class="form-control mb-4 col-4">
+			<input type="text" th:field="*{email}"
+				placeholder="Email del empleado" class="form-control mb-4 col-4">
+			<button type="submit" class="btn btn-info col-2">Guardar</button>
+		</form>
+		<hr>
+		<a th:href="@{/}">Regresar a la lista de empleados</a>
+	</div>
+</body>
+</html>
